@@ -1,0 +1,79 @@
+.artists-section {
+  width: 90%;
+  max-width: 1400px;
+  margin: 10px auto;
+  background: #f5f5f5;
+  padding: 10px 0px 0 30px;
+  border-radius: 10px;
+}
+
+.artists-section h2 {
+  margin-bottom: 30px;
+}
+
+.artists-line {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  overflow: visible;
+}
+
+.artist-profile-box {
+  position: relative;
+  text-align: center;
+}
+
+.artist-profile-box p {
+  margin-top: 10px;
+}
+
+.artist-profile {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  cursor: pointer;
+}
+
+.art-preview {
+  position: absolute;
+
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 200px;
+  padding: 6px;
+
+  background: white;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease;
+
+  z-index: 100;
+}
+
+.art-preview img {
+  width: 100%;
+  height: 230px;
+
+  object-fit: cover;
+  display: block;
+}
+
+.artist-profile-box:hover .art-preview {
+  opacity: 1;
+  visibility: visible;
+}
+
+.artist-profile-box:first-child .art-preview {
+  left: 0;
+  transform: none;
+}
