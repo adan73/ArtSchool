@@ -1,0 +1,403 @@
+/* ================= PAGE ================= */
+
+.classes-page {
+  min-height: 100vh;
+  background: #F1EFED;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.classes-main {
+  flex: 1;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.classes-header {
+  margin: 30px 0 30px;
+    padding: 25px 25px 0px;
+
+  background: white;
+  border-radius: 12px;
+
+}
+
+.classes-header h1 {
+  margin: 0 0 12px;
+
+  font-size: 40px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.classes-header p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.class-filters {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  padding: 0 0 35px;
+  margin-bottom: 55px;
+
+  background: white;
+
+  border-radius: 0 0 12px 12px;
+}
+
+.class-filters button {
+  padding: 11px 20px;
+
+  border: 1px solid #bbb;
+  border-radius: 30px;
+
+  background: white;
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.class-filters button:hover {
+  border-color: black;
+  transform: translateY(-2px);
+}
+
+.class-filters button.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.schedule-section {
+  margin-bottom: 30px;
+}
+
+.schedule-heading {
+  margin-bottom: 5px;
+}
+
+.schedule-heading h2 {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+}
+
+.schedule-heading p {
+  margin: 0;
+
+  font-size: 16px;
+  color: #666;
+}
+
+/* ================= SCHEDULE ================= */
+
+.schedule-section {
+  margin-bottom: 30px;
+}
+
+.schedule-heading {
+  margin-bottom: 15px;
+}
+
+.schedule-heading h2 {
+  margin: -35px 25px 15px;
+
+  font-size: 32px;
+}
+
+.schedule-heading p {
+  margin: 0 25px 0;
+
+  color: #555;
+}
+
+.schedule-placeholder {
+  min-height: 400px;
+
+  background: white;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+}
+
+.class-details-section {
+  margin: 30px 25px 0;
+}
+
+.class-details-heading {
+  margin-bottom: 30px;
+}
+
+.class-details-heading h2 {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+}
+
+.class-details-heading p {
+  margin: 0;
+
+  color: #555;
+}
+
+
+.class-detail {
+  background: white;
+
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.class-detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.class-detail-top h3 {
+  margin: 0;
+
+  font-size: 25px;
+}
+
+.class-detail-top span {
+  font-weight: bold;
+}
+
+.class-detail-schedule {
+  margin: 12px 0;
+
+  font-weight: 600;
+}
+
+.class-detail-description {
+  max-width: 850px;
+
+  margin: 15px 0;
+
+  line-height: 1.6;
+
+  color: #444;
+}
+
+.class-detail-bottom {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.class-detail-bottom p {
+  margin: 0;
+}
+
+.class-signup-btn {
+  padding: 12px 28px;
+
+  border: 2px solid black;
+
+  background: black;
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.class-signup-btn:hover {
+  background: white;
+  color: black;
+}
+/* WEEKLY CALENDAR */
+
+.weekly-calendar {
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  border-bottom: 2px solid #ccc;
+}
+
+.time-header,
+.day-header {
+  padding: 18px 10px;
+}
+
+.day-header {
+  text-align: center;
+  font-weight: bold;
+  border-left: 1px solid #ddd;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+}
+
+.time-column {
+  border-right: 1px solid #ddd;
+}
+
+.time-slot {
+  height: 70px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.day-column {
+  position: relative;
+  min-width: 0;
+  border-right: 1px solid #ddd;
+}
+
+.calendar-cell {
+  height: 70px;
+  border-bottom: 1px solid #eee;
+}
+
+.calendar-class {
+  position: absolute;
+
+  left: 6px;
+  right: 6px;
+
+  padding: 8px;
+
+  background: #e7e7e7;
+  border: 1px solid #aaa;
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  z-index: 2;
+}
+
+.calendar-class strong {
+  display: block;
+  font-size: 14px;
+}
+
+.calendar-class span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+
+  .classes-main {
+    width: 92%;
+  }
+
+
+  .classes-header {
+    padding: 35px 20px 0;
+  }
+
+  .classes-header h1 {
+    font-size: 34px;
+  }
+
+  .classes-header p {
+    font-size: 15px;
+  }
+
+
+  .class-filters {
+    padding: 0 15px 35px;
+
+    gap: 8px;
+  }
+
+  .class-filters button {
+    padding: 9px 14px;
+
+    font-size: 13px;
+  }
+
+
+  .schedule-heading h2 {
+    font-size: 27px;
+    margin: 0 20px 8px;
+  }
+
+  .schedule-heading p {
+    font-size: 15px;
+  }
+
+
+  .class-details-section {
+    margin: 45px 20px 0;
+  }
+
+  .class-details-heading h2 {
+    font-size: 27px;
+  }
+
+  .class-detail {
+    padding: 20px;
+  }
+
+  .class-detail-top {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .class-detail-top h3 {
+    font-size: 22px;
+  }
+
+  .class-detail-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  /* SIGN UP */
+
+  .class-signup-btn {
+    width: 100%;
+  }
+
+}
