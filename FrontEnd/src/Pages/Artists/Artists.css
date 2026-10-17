@@ -1,0 +1,98 @@
+.Artists-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1efed;
+  color: #111;
+}
+
+.Artists-main {
+  flex: 1;
+
+  width: min(1200px, calc(100% - 48px));
+  width: 90%;
+  max-width: 1400px;
+  margin: 10px auto;
+
+  padding: 90px 0 120px;
+}
+
+.Artists-header {
+  max-width: 750px;
+  margin-top:-60px;
+  margin-bottom: 20px;
+}
+
+.Artists-label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: #777;
+}
+
+.Artists-header h1 {
+  margin-top: -20px;
+  font-size: clamp(50px, 7vw, 55px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  color: #111;
+  margin-bottom: -20px;
+}
+
+.Artists-header p {
+
+  margin: 28px 0 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #666;
+}
+
+
+
+.Artists-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Artists-empty {
+  padding: 80px 0;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+@media (max-width: 750px) {
+  .Artists-main {
+    width: calc(100% - 28px);
+
+    padding: 60px 0 80px;
+  }
+
+  .Artists-header {
+    margin-bottom: 50px;
+  }
+
+  .Artists-header h1 {
+    letter-spacing: -2px;
+    margin-top: 20px;
+  }
+
+  .Artists-header p {
+    font-size: 15px;
+    margin-bottom: -30px;
+  }
+}

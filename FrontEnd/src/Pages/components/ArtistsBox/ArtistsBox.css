@@ -1,0 +1,279 @@
+
+.Artists-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.Artists-box-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.Artists-box-profile {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.Artists-box-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.Artists-box-content h2 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.Artists-box-specialization {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.Artists-box-bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  white-space: pre-line;
+  whidth: 100%;
+}
+
+.Artists-box-gallery {
+  margin-top: 30px;
+}
+
+.Artists-box-gallery h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.Artists-box-images {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.Artists-box-image {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.Artists-box-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.Artists-box-image:hover img {
+  transform: scale(1.05);
+}
+
+.Artists-box-image:focus-visible {
+  outline: 3px solid #555;
+  outline-offset: 3px;
+}
+
+.Artists-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.Artists-modal {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.Artists-modal-image {
+  flex: 1.4;
+  min-width: 0;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.Artists-modal-image img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.Artists-modal-details {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 30px;
+  overflow-y: auto;
+}
+
+.Artists-modal-details h2 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.Artists-modal-artist {
+  color: #777;
+  font-size: 15px;
+}
+
+.Artists-modal-section {
+  margin-top: 30px;
+}
+
+.Artists-modal-section h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.Artists-modal-section p {
+  color: #555;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.Artists-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.Artists-modal-close:hover {
+  background: #ddd;
+}
+
+@media (max-width: 700px) {
+  .Artists-box {
+    padding: 20px;
+  }
+
+  .Artists-box-header {
+    flex-direction: column;
+  }
+
+  .Artists-box-profile {
+    width: 130px;
+    height: 130px;
+  }
+
+  .Artists-modal {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .Artists-modal-image {
+    flex: none;
+    padding: 15px;
+  }
+
+  .Artists-modal-image img {
+    max-height: 45vh;
+  }
+
+  .Artists-modal-details {
+    flex: none;
+    overflow: visible;
+    padding: 25px;
+  }
+
+  .Artists-box-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.Artists-modal-overlay {
+  animation: artistsOverlayFade 0.3s ease both;
+}
+
+.Artists-modal-animated .Artists-modal-image {
+  animation: artistsPaintingRise 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+.Artists-modal-animated .Artists-modal-details {
+  animation: artistsDetailsRight 0.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.9s both;
+}
+
+@keyframes artistsOverlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes artistsPaintingRise {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes artistsPaintingLeft {
+  from { transform: translateX(65px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes artistsDetailsRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Artists-modal-overlay,
+  .Artists-modal-animated .Artists-modal-image,
+  .Artists-modal-animated .Artists-modal-image img,
+  .Artists-modal-animated .Artists-modal-details {
+    animation: none !important;
+  }
+}
